@@ -16,7 +16,7 @@ final class SearchResultSourceDTO extends AbstractEntity
         private ?string $passport_id,
         private ?int $pinfl,
         private ?string $full_name,
-//        private ?string $contract_number,
+        private ?array $credits,
     ) {
     }
 
@@ -84,13 +84,13 @@ final class SearchResultSourceDTO extends AbstractEntity
         return $this->full_name;
     }
 
-//    /**
-//     * @return string|null
-//     */
-//    public function getContractNumber(): ?string
-//    {
-//        return $this->contract_number;
-//    }
+    /**
+     * @return SearchResultSourceCreditsDTO[]|null
+     */
+    public function getCredits(): ?array
+    {
+        return $this->credits;
+    }
 
     /**
      * @inheritDoc
@@ -107,7 +107,7 @@ final class SearchResultSourceDTO extends AbstractEntity
             passport_id: self::parseNullableString($data['passport_id']),
             pinfl: self::parseNullableInt($data['pinfl']),
             full_name: self::parseNullableString($data['full_name']),
-//            contract_number: self::parseNullableString($data['contract_number']),
+            credits: self::parseNullableEntityList(SearchResultSourceCreditsDTO::class, $data['credits']),
         );
     }
 
@@ -125,7 +125,7 @@ final class SearchResultSourceDTO extends AbstractEntity
             'passport_id' => $this->passport_id,
             'pinfl' => $this->pinfl,
             'full_name' => $this->full_name,
-//            'contract_number' => $this->contract_number,
+            'credits' => $this->credits,
         ];
     }
 }

@@ -1,8 +1,8 @@
 {
-    "name": "alif/alifsearch",
+    "name": "alifuz/alifsearch",
     "description": "The package for elasticsearch",
     "keywords": [
-        "alif",
+        "alifuz",
         "alifsearch"
     ],
     "homepage": "https://github.com/alif/alifsearch",
