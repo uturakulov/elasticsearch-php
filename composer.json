@@ -1,0 +1,60 @@
+{
+    "name": "alif/alifsearch",
+    "description": "The package for elasticsearch",
+    "keywords": [
+        "alif",
+        "alifsearch"
+    ],
+    "homepage": "https://github.com/alif/alifsearch",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "u_turakulov",
+            "email": "u.turakulov@aliftech.uz",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "alifuz/utils": "^1.3",
+        "elasticsearch/elasticsearch": "^8.6",
+        "illuminate/contracts": "*",
+        "illuminate/support": "*",
+        "myclabs/php-enum": "^1.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "spatie/ray": "^1.28"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alifuz\\AlifSearch\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alifuz\\AlifSearch\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+            "test-coverage": "vendor/bin/phpunit --coverage",
+        "format": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+
+            "phpstan/extension-installer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://gitlab.alifshop.uz/packages/backend/backend-utils.git"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
